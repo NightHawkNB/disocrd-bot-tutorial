@@ -13,3 +13,6 @@ Discrod Bot Tutorial on https://youtu.be/KZ3tIGHU314
 05. Created an event listener for the event "ready" and "message"
 
 06. We can access any message and the all details related to that and reply accordingly
+
+07. Imported dotenv package and added the TOKEN to the file ".env" .
+    Then created the file ".gitignore" and added .env to it so that the .env file will be ignored by the git repos.
