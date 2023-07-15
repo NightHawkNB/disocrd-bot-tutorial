@@ -14,13 +14,15 @@ client.on('ready', (c) => {
     console.log(`✅ ${c.user.tag} is ready`)
 })
 
-client.on('messageCreate', (message) => {
-    if(message.author.bot){
-        return;
+client.on('interactionCreate', (interaction) => {
+    if (!interaction.isChatInputCommand()) return;
+
+    if (interaction.commandName === 'hey') {
+        interaction.reply(`Hey ! ${interaction.user.username}`)
     }
 
-    if(message.content.toLowerCase() === 'hello' || message.content.toLowerCase() === 'hellow'){
-        message.reply(`Hi, ${message.author.username}`)
+    if (interaction.commandName === 'ping') {
+        interaction.reply('Pong !')
     }
 })
 
