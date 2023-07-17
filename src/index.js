@@ -32,17 +32,17 @@ client.on('interactionCreate', (interaction) => {
             .setColor('Random')
             .addFields(
                 {
-                    name: `Field 1`,
+                    name: `:smile: Field 1`,
                     value: 'Some random value',
                     inline: true
                 },
                 {
-                    name: 'Field 2',
+                    name: ':grin: Field 2',
                     value: 'Any value',
                     inline: true
                 },
                 {
-                    name: 'Field 3',
+                    name: ':smiley: Field 3',
                     value: 'Field 3 Values',
                     inline: true
                 },
