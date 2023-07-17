@@ -17,12 +17,14 @@ client.on('ready', (c) => {
 client.on('interactionCreate', (interaction) => {
     if (!interaction.isChatInputCommand()) return;
 
-    if (interaction.commandName === 'hey') {
-        interaction.reply(`Hey ! ${interaction.user.username}`)
-    }
+    if (interaction.commandName === 'add') {
+        const num1 = interaction.options.get('first-number').value
 
-    if (interaction.commandName === 'ping') {
-        interaction.reply('Pong !')
+        //! Here ? infront of .value means an optional value
+        //* const num2 = interaction.options.get('second-number')?.value
+        const num2 = interaction.options.get('second-number').value
+
+        interaction.reply(`The sum is ${num1+num2}`)
     }
 })
 
