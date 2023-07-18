@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { Client, IntentsBitField, EmbedBuilder } = require('discord.js')
+const { Client, IntentsBitField, EmbedBuilder, ActivityType } = require('discord.js')
 
 const client = new Client({
     intents: [
@@ -10,8 +10,24 @@ const client = new Client({
     ]
 })
 
+let status = [
+    {
+        name: "Spider Man 3",
+        type: ActivityType.Watching 
+    },
+    {
+        name: "Under Maintainance",
+        type: ActivityType.Listening
+    }
+]
+
 client.on('ready', (c) => {
     console.log(`✅ ${c.user.tag} is ready`)
+
+    setInterval(() => {
+        let random = Math.floor(Math.random() * status.length)
+        client.user.setActivity(status[random])
+    }, 10000)
 })
 
 client.on('interactionCreate', async (interaction) => {
