@@ -1,5 +1,3 @@
-Discrod Bot Tutorial on https://youtu.be/KZ3tIGHU314
-
 01. Installed discord.js npm package
 
 02. Changed the "main" value in the package.json file to "src/index.js",
