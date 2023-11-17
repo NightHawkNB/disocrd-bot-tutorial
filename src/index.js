@@ -111,4 +111,13 @@ client.on('interactionCreate', async (interaction) => {
     }
 })
 
+client.on('messageCreate', (message) => {
+    if(message.author.bot) return ;
+
+    if(message.content === "hi" || message.content === "Hi") {
+        console.log(`Hi ${message.author.globalName}`)
+        message.reply(`Hi ${message.author.globalName}`)
+    }
+})
+
 client.login(process.env.TOKEN)
