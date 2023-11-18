@@ -115,8 +115,11 @@ client.on('messageCreate', (message) => {
     if(message.author.bot) return ;
 
     if(message.content === "hi" || message.content === "Hi") {
-        console.log(`Hi ${message.author.globalName}`)
         message.reply(`Hi ${message.author.globalName}`)
+    }
+
+    if(message.content === "hello") {
+        message.reply(`Hello, ${message.author.globalName}`)
     }
 })
 
